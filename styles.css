@@ -1,0 +1,274 @@
+:root {
+  color: #1d2622;
+  background: #edf3ef;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #edf3ef;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 46px;
+  padding: 8px 14px;
+  background: #ffffff;
+  border-bottom: 1px solid #cddbd2;
+  box-shadow: 0 1px 6px rgba(29, 64, 47, 0.08);
+}
+
+.home-link {
+  color: #195b39;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+.view-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.view-button,
+.download-link,
+.reader-button {
+  border: 1px solid #9eb8aa;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #1d3d2d;
+  cursor: pointer;
+  font: inherit;
+}
+
+.view-button {
+  min-width: 70px;
+  padding: 5px 8px;
+  font-size: 12px;
+}
+
+.view-button.is-active {
+  border-color: #2f855a;
+  background: #dff1e8;
+}
+
+.app {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 22px 14px 36px;
+}
+
+.page-title {
+  margin: 0 0 18px;
+  color: #183b2b;
+  font-size: 23px;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.work-card {
+  display: block;
+  padding: 9px;
+  border: 1px solid #cbdad1;
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 0 1px 5px rgba(29, 64, 47, 0.08);
+  text-decoration: none;
+}
+
+.work-card:hover .work-title {
+  text-decoration: underline;
+}
+
+.work-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 8;
+  object-fit: cover;
+  border: 1px solid #d6e1da;
+  border-radius: 3px;
+  background: #e8eee9;
+}
+
+.work-title {
+  margin: 8px 0 4px;
+  color: #183b2b;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.work-meta {
+  margin: 0 0 8px;
+  color: #5c6d62;
+  font-size: 13px;
+}
+
+.download-link {
+  display: inline-block;
+  margin-top: 7px;
+  padding: 6px 9px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.download-link:hover,
+.reader-button:hover,
+.view-button:hover {
+  background: #eef8f2;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.gallery-item {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.gallery-item:hover .gallery-image,
+.gallery-item:focus-visible .gallery-image {
+  border-color: #2f855a;
+  box-shadow: 0 2px 10px rgba(29, 64, 47, 0.16);
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #c4d2ca;
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0 1px 5px rgba(29, 64, 47, 0.08);
+}
+
+.reader {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 60px);
+  padding: 4vh 9vw;
+}
+
+.reader-image {
+  display: block;
+  max-width: 82vw;
+  max-height: calc(100vh - 90px);
+  width: auto;
+  height: auto;
+  border: 1px solid #c4d2ca;
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0 2px 14px rgba(29, 64, 47, 0.15);
+  cursor: pointer;
+}
+
+.reader-button {
+  position: fixed;
+  top: 50%;
+  z-index: 8;
+  width: 34px;
+  height: 62px;
+  transform: translateY(-50%);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.reader-button.prev {
+  left: 10px;
+}
+
+.reader-button.next {
+  right: 10px;
+}
+
+.reader-count {
+  position: fixed;
+  right: 12px;
+  bottom: 10px;
+  padding: 3px 6px;
+  border: 1px solid rgba(158, 184, 170, 0.75);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #335243;
+  font-size: 12px;
+}
+
+.empty,
+.loading,
+.error {
+  margin: 24px 0;
+  color: #44564b;
+}
+
+@media (max-width: 620px) {
+  .site-header {
+    min-height: 38px;
+    padding: 6px 8px;
+  }
+
+  .app {
+    padding: 12px 8px 24px;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(auto-fill, minmax(142px, 1fr));
+    gap: 10px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .reader {
+    min-height: calc(100vh - 50px);
+    padding: 3vh 11vw;
+  }
+
+  .reader-image {
+    max-width: 78vw;
+    max-height: calc(100vh - 78px);
+  }
+
+  .reader-button {
+    width: 30px;
+    height: 54px;
+    font-size: 24px;
+  }
+}
