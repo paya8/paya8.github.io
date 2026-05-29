@@ -1,12 +1,20 @@
-# 8ayap manga reader
+# 8ayap
 
-Minimal static gallery/reader site for translated manga works, intended for GitHub Pages at `8ayap.github.io`.
+A small static site for reading translated manga works.
 
-## Adding a work
+The site has a simple home page, gallery view, reader view, keyboard/click navigation, and download links for each work.
+
+## Site Data
+
+Works are defined in `works.json`. Each entry includes an id, title, ordered page image paths, and a download URL.
+
+Images are served from `works/<work-id>/`. Large zip downloads are hosted as GitHub Release assets instead of being committed to the repository.
+
+## Adding Works
 
 1. Put the page images in `works/<work-id>/`.
-2. Put the downloadable zip at `downloads/<work-id>.zip`.
-3. Add an entry to `works.json`.
+2. Upload the downloadable zip as a GitHub Release asset.
+3. Add or update the entry in `works.json`.
 
 Example:
 
@@ -18,7 +26,7 @@ Example:
     "works/example-work/001.jpg",
     "works/example-work/002.jpg"
   ],
-  "download": "downloads/example-work.zip"
+  "download": "https://github.com/f0000lish/8ayap/releases/download/tag-name/example-work.zip"
 }
 ```
 
