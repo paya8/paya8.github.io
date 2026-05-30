@@ -61,7 +61,7 @@
   });
 
   function renderHome() {
-    document.title = "8ayap";
+    document.title = "paya8";
     viewControls.hidden = true;
     app.className = "app";
 
@@ -94,7 +94,7 @@
   }
 
   function renderWork() {
-    document.title = currentWork.title + " - 8ayap";
+    document.title = currentWork.title + " - paya8";
     viewControls.hidden = false;
     setActiveViewButton();
 

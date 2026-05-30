@@ -1,4 +1,4 @@
-# 8ayap
+# paya8
 
 A small static site for reading translated manga works.
 
@@ -26,7 +26,7 @@ Example:
     "works/example-work/001.jpg",
     "works/example-work/002.jpg"
   ],
-  "download": "https://github.com/f0000lish/8ayap/releases/download/tag-name/example-work.zip"
+  "download": "https://github.com/paya8/paya8.github.io/releases/download/tag-name/example-work.zip"
 }
 ```
 
