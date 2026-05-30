@@ -106,6 +106,9 @@
 
     activePage = Math.min(Math.max(activePage, 0), currentWork.pages.length - 1);
     app.className = activeView === "reader" ? "app app-reader" : "app";
+    if (currentWork.layout) {
+      app.className += " app-layout-" + sanitizeClassName(currentWork.layout);
+    }
 
     if (activeView === "reader") {
       renderReader();
@@ -202,5 +205,9 @@
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
+  }
+
+  function sanitizeClassName(value) {
+    return String(value || "").toLowerCase().replace(/[^a-z0-9_-]/g, "");
   }
 })();
