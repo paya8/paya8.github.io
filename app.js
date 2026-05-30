@@ -66,7 +66,7 @@
     app.className = "app";
 
     if (!works.length) {
-      app.innerHTML = '<h1 class="page-title">Works</h1><p class="empty">No works have been added yet.</p>';
+      app.innerHTML = '<h1 class="page-title">Works</h1><p class="empty">No works have been added yet.</p>' + renderDisclaimer();
       return;
     }
 
@@ -74,7 +74,8 @@
       '<h1 class="page-title">Works</h1>' +
       '<section class="works-grid">' +
       works.map(renderWorkCard).join("") +
-      "</section>";
+      "</section>" +
+      renderDisclaimer();
   }
 
   function renderWorkCard(work) {
@@ -188,6 +189,10 @@
   function renderError(message) {
     viewControls.hidden = true;
     app.innerHTML = '<p class="error">' + escapeHtml(message) + ' <a href="./">Return home</a>.</p>';
+  }
+
+  function renderDisclaimer() {
+    return '<p class="disclaimer">Disclaimer: All works here are produced by paya8 at <a href="https://www.fanbox.cc/@paya8">https://www.fanbox.cc/@paya8</a>. Support the creator there. I will only host English translations that I produce. I can be contacted at <a href="mailto:f00l2642@gmail.com">f00l2642@gmail.com</a></p>';
   }
 
   function escapeHtml(value) {
